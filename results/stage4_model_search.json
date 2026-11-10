@@ -1,6 +1,6 @@
 {
   "protocol": {
-    "scikit_learn_version": "1.9.1",
+    "scikit_learn_version": "1.9.0",
     "positive_class": 1,
     "selection_metric": "roc_auc",
     "outer_cv": {
@@ -19,9 +19,9 @@
     "final_development_search_iterations": 15,
     "development_rows": 5065,
     "holdout_reserved_rows": 1267,
+    "labeled_training_file_sha256": "e87e1b53834232ce86b282b42bc67dfb734b5e66c4e449c77a4c2d171246a841",
     "holdout_used_for_model_selection_or_scoring": false,
-    "preprocessing_inside_pipeline": true,
-    "labeled_training_file_sha256": "e87e1b53834232ce86b282b42bc67dfb734b5e66c4e449c77a4c2d171246a841"
+    "preprocessing_inside_pipeline": true
   },
   "nested_cv": {
     "logistic_regression": {

@@ -1,0 +1,51 @@
+{
+  "test_file": "final_teste.csv",
+  "training_rows_used_for_refit": 6332,
+  "test_rows_scored": 1605,
+  "test_labels_available": false,
+  "test_labels_used_for_training_or_tuning": false,
+  "hyperparameters_source": "stage4_model_search.json; best CV parameters from development data",
+  "threshold_source": "stage5_results.json; selected with OOF scores from development only",
+  "score_type_by_model": {
+    "logistic_regression": "probabilidade da classe 1",
+    "random_forest": "probabilidade da classe 1",
+    "extra_trees": "probabilidade da classe 1",
+    "gradient_boosting": "probabilidade da classe 1",
+    "hist_gradient_boosting": "probabilidade da classe 1",
+    "svc_rbf": "decision_function (não é probabilidade)"
+  },
+  "models": [
+    {
+      "Modelo": "logistic_regression",
+      "Tipo de score": "probabilidade da classe 1",
+      "Limiar (OOF treino)": 0.0775057367
+    },
+    {
+      "Modelo": "random_forest",
+      "Tipo de score": "probabilidade da classe 1",
+      "Limiar (OOF treino)": 0.0856087379
+    },
+    {
+      "Modelo": "extra_trees",
+      "Tipo de score": "probabilidade da classe 1",
+      "Limiar (OOF treino)": 0.1121346068
+    },
+    {
+      "Modelo": "gradient_boosting",
+      "Tipo de score": "probabilidade da classe 1",
+      "Limiar (OOF treino)": 0.1232951286
+    },
+    {
+      "Modelo": "hist_gradient_boosting",
+      "Tipo de score": "probabilidade da classe 1",
+      "Limiar (OOF treino)": 0.1258914753
+    },
+    {
+      "Modelo": "svc_rbf",
+      "Tipo de score": "decision_function (não é probabilidade)",
+      "Limiar (OOF treino)": -1.9513020311
+    }
+  ],
+  "row_level_scores_file": "results/official_test_model_scores.csv",
+  "row_level_scores_are_git_ignored": true
+}

@@ -184,8 +184,8 @@ def evaluate_official_test(
                 "Coloque o teste como data/raw/final_teste.csv e mantenha os artefatos das etapas 4 e 5."
             )
 
-    train = _normalise_columns(pd.read_csv(train_path), train_path)
-    test = _normalise_columns(pd.read_csv(test_path), test_path)
+    train = _normalise_columns(pd.read_csv(train_path, sep=None, engine="python"), train_path)
+    test = _normalise_columns(pd.read_csv(test_path, sep=None, engine="python"), test_path)
     X_train, y_train, X_test, y_test = _validate_inputs(
         train, test, train_path, test_path
     )

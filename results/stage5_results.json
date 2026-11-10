@@ -7,7 +7,7 @@
   "threshold_selection_rule": "per model: minimize LR-, then maximize F1 on nested outer-fold OOF development scores (probability for probabilistic models; decision_function for SVC); predict class 1 when score >= threshold",
   "models": {
     "logistic_regression": {
-      "threshold": 0.07750573665342742,
+      "threshold": 0.07750573665342907,
       "roc_auc": 0.7077185392543581,
       "sensitivity": 1.0,
       "specificity": 0.0018450184501845018,
@@ -25,7 +25,7 @@
         ]
       ],
       "development_oof_threshold_selection": {
-        "threshold": 0.07750573665342742,
+        "threshold": 0.07750573665342907,
         "sensitivity": 1.0,
         "specificity": 0.0013850415512465374,
         "lr_minus": 0.0,
