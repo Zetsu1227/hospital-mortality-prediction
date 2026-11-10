@@ -1,6 +1,6 @@
 {
   "protocol": {
-    "scikit_learn_version": "1.9.0",
+    "scikit_learn_version": "1.9.1",
     "positive_class": 1,
     "selection_metric": "roc_auc",
     "outer_cv": {
