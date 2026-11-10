@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import csv
 from pathlib import Path
 from typing import Any
 
@@ -49,6 +50,17 @@ MODEL_NAMES = [
     "hist_gradient_boosting",
     "svc_rbf",
 ]
+
+
+def _read_csv(path: Path) -> pd.DataFrame:
+    """Read a delimited file while detecting comma, semicolon, or tab separators."""
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        sample = stream.read(8192)
+    try:
+        delimiter = csv.Sniffer().sniff(sample, delimiters=",;\t|").delimiter
+    except csv.Error as exc:
+        raise ValueError(f"Não foi possível detectar o delimitador de {path.name}.") from exc
+    return pd.read_csv(path, sep=delimiter, encoding="utf-8-sig")
 
 
 def _normalise_columns(frame: pd.DataFrame, path: Path) -> pd.DataFrame:
@@ -183,8 +195,8 @@ def evaluate_official_test(
                 "Coloque o teste como data/raw/final_teste.csv e execute antes a busca final no notebook 01."
             )
 
-    train = _normalise_columns(pd.read_csv(train_path), train_path)
-    test = _normalise_columns(pd.read_csv(test_path), test_path)
+    train = _normalise_columns(_read_csv(train_path), train_path)
+    test = _normalise_columns(_read_csv(test_path), test_path)
     X_train, y_train, X_test, y_test = _validate_inputs(
         train, test, train_path, test_path
     )
